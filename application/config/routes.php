@@ -57,11 +57,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['api/login'] = 'api/login';
 
-// $route['api/getCity'] = 'api/';
+$route['api/getCity'] = 'api/common/getCity';
 
-// $route['api/getRoomType'] = 'api/';
+$route['api/getRoomType'] = 'api/common/getRoomType';
 
-// $route['api/getDocument'] = 'api/';
+$route['api/getDocument'] = 'api/common/getDocuments';
 
 // $route['api/getBooking'] = 'api/';
 // $route['api/setBooking'] = 'api/';
