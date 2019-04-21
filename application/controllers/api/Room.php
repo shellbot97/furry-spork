@@ -11,6 +11,7 @@ class Room extends Secure_area
 	{
 		parent::__construct();
 		$this->load->model('Room_model');
+		$this->user_id = $this->session->userdata('user_id');
 	}
 
 	public function getRoom()
@@ -28,6 +29,60 @@ class Room extends Secure_area
 			$data = $this->Room_model->get_room_by_hotelid($id, $offset, $hotel_id);
 
 			echo echo_result_by_array($data);
+		}
+	}
+
+	public function setRoom()
+	{
+		$this->form_validation->set_rules('room_number', 'Room Number', 'trim|required');
+		$this->form_validation->set_rules('room_type_id', 'Room Type', 'required');
+		$this->form_validation->set_rules('floor_number', 'Floor Number', 'numeric|required');
+		$this->form_validation->set_rules('hotel_id', 'Hotel', 'trim|required');
+
+		if ($this->form_validation->run() == FALSE){
+			echo echo_validation_errors(validation_errors());
+		}else{
+
+			$roomData = array(
+				'room_number' => ($this->input->post('room_number') != "") ? $this->input->post('room_number') : '-1',
+				'room_type_id' => ($this->input->post('room_type_id') != "") ? $this->input->post('room_type_id') : '-1',
+				'floor_number' => ($this->input->post('floor_number') != "") ? $this->input->post('floor_number') : '-1',
+				'hotel_id' => ($this->input->post('hotel_id') != "") ? $this->input->post('hotel_id') : '-1',
+				'user_id' =>  $this->user_id
+			);
+
+			$responce_set_room = $this->Room_model->set_room($roomData);
+			echo give_responce_boolean($responce_set_room);
+			
+		}
+	}
+
+	public function updateRoom()
+	{
+		$this->form_validation->set_rules('room_number', 'Room Number', 'trim|required');
+		$this->form_validation->set_rules('room_type_id', 'Room Type', 'required');
+		$this->form_validation->set_rules('floor_number', 'Floor Number', 'numeric|required');
+		$this->form_validation->set_rules('hotel_id', 'Hotel', 'trim|required');
+
+		if ($this->form_validation->run() == FALSE){
+			echo echo_validation_errors(validation_errors());
+		}else{
+			if ($this->input->post('room_id') == "") {
+				$this->output->set_status_header('422');
+				echo_validation_errors();
+				exit;
+			}
+			$roomData = array(
+				'room_number' => ($this->input->post('room_number') != "") ? $this->input->post('room_number') : '-1',
+				'room_type_id' => ($this->input->post('room_type_id') != "") ? $this->input->post('room_type_id') : '-1',
+				'floor_number' => ($this->input->post('floor_number') != "") ? $this->input->post('floor_number') : '-1',
+				'hotel_id' => ($this->input->post('hotel_id') != "") ? $this->input->post('hotel_id') : '-1',
+				'user_id' =>  $this->user_id
+			);
+			$roomId = $this->input->post('room_id');
+
+			$responce_update_room = $this->Room_model->update_room($roomData, $roomId);
+			echo give_responce_boolean($responce_update_room);
 		}
 	}
 }

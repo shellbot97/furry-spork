@@ -10,12 +10,13 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
+			$this->table_name = 'rooms';
 		}
 
 		public function get_room_by_hotelid($id = '', $offset = '', $hotel_id = '')
 		{
 			$this->db->select('*');
-			$this->db->from('rooms');
+			$this->db->from($this->table_name);
 			if ($id!="") {
 				$this->db->where('room_id', $id);
 			}
@@ -28,6 +29,19 @@
 			$this->db->where('user_id', $this->user_id);
 			$data = $this->db->get()->result_array();
 			return $data;
+		}
+
+		public function set_room($value='')
+		{
+			$this->db->insert($this->table_name, $value);
+			return ($this->db->affected_rows() > 0) ? true : false;
+		}
+
+		public function update_room($room_data='', $room_id)
+		{
+			$this->db->where('room_id', $room_id);
+			$this->db->update($this->table_name, $room_data); 
+			return ($this->db->affected_rows() > 0) ? true : false;
 		}
 	}
 

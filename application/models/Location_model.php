@@ -10,12 +10,13 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
+			$this->table_name = 'locations';
 		}
 
 		public function get_location_by_cityid($id = '', $offset = '', $city_id = '')
 		{
 			$this->db->select('*');
-			$this->db->from('locations');
+			$this->db->from($this->table_name);
 			if ($id!="") {
 				$this->db->where('location_id', $id);
 			}
@@ -28,6 +29,19 @@
 			$this->db->where('user_id', $this->user_id);
 			$data = $this->db->get()->result_array();
 			return $data;
+		}
+
+		public function set_Location($value='')
+		{
+			$this->db->insert($this->table_name, $value);
+			return ($this->db->affected_rows() > 0) ? true : false;
+		}
+
+		public function update_Location($location_data='', $location_id='')
+		{
+			$this->db->where('location_id', $location_id);
+			$this->db->update($this->table_name, $location_data); 
+			return ($this->db->affected_rows() > 0) ? true : false;
 		}
 	}
 
