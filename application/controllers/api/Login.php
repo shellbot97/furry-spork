@@ -18,7 +18,8 @@
 			$user_data = $this->Login_model->get_user_info_by_username($this->input->post('username'),$password);
 			if ($user_data != "") {
 				$array = array(
-					'username' => $user_data['username']
+					'username' => $user_data['username'],
+					'user_id' => $user_data['user_id']
 				);
 				$this->session->set_userdata( $array );
 				echo json_encode(array('Code' => 200, 'Message' => session_id()),200);

@@ -32,7 +32,7 @@ CREATE TABLE `room_type` ( `room_type_id` INT(10) NOT NULL AUTO_INCREMENT ,
 CREATE TABLE `documents` ( `document_id` INT(10) NOT NULL AUTO_INCREMENT , 
 	`document_name` VARCHAR(100) NOT NULL , PRIMARY KEY (`document_id`)) ENGINE = InnoDB;
 
-CREATE TABLE `customer` ( `customer_id` INT(10) NOT NULL AUTO_INCREMENT , 
+CREATE TABLE `customers` ( `customer_id` INT(10) NOT NULL AUTO_INCREMENT , 
 	`phone_number` VARCHAR(10) NOT NULL , `first_name` VARCHAR(100) NOT NULL , 
 	`last_name` VARCHAR(100) NOT NULL , `address_1` VARCHAR(500) NOT NULL , 
 	`address_2` VARCHAR(500) NOT NULL , `is_deleted` INT(1) NOT NULL DEFAULT '0' , 
@@ -52,6 +52,16 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         `data` blob NOT NULL,
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
+
+ALTER TABLE `locations` ADD `user_id` INT(10) NOT NULL AFTER `is_deleted`;
+
+ALTER TABLE `booking` ADD `user_id` INT(10) NOT NULL AFTER `is_deleted`;
+
+ALTER TABLE `hotels` ADD `user_id` INT(10) NOT NULL AFTER `documents_required`;
+
+ALTER TABLE `rooms` ADD `user_id` INT(10) NOT NULL AFTER `is_deleted`;
+
+
 ​
 
 
