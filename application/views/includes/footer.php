@@ -1,10 +1,14 @@
+				</div>
 			<footer>
-				<div>
+				<!-- <div>
 					<div>
 						<p>All Rights Reserved</p>
 					</div>
-				</div>
+				</div> -->
 			</footer>
 
 		</body>
+		<script type="text/javascript">
+			
+		</script>
 	</html>
