@@ -85,6 +85,19 @@ class Room extends Secure_area
 			echo give_responce_boolean($responce_update_room);
 		}
 	}
+
+	public function deleteRoom()
+	{
+		if ($this->input->post('room_id') == "") {
+				$this->output->set_status_header('422');
+				echo_validation_errors();
+				exit;
+			}
+		$roomId = $this->input->post('room_id');
+
+		$responce_delete_room = $this->Room_model->delete_room($roomId);
+		echo give_responce_boolean($responce_delete_room);
+	}
 }
 
 

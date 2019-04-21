@@ -38,6 +38,17 @@
 			$this->db->update($this->table_name, $customer_data); 
 			return ($this->db->affected_rows() > 0) ? true : false;
 		}
+
+		public function delete_customer($value='')
+		{
+			$deleted = array('is_deleted' => 1 );
+		
+			$this->db->where('customer_id', $value);
+			$this->db->update($this->table_name, $deleted); 
+			return ($this->db->affected_rows() > 0) ? true : false;
+		}
+
+
 	}
 
 

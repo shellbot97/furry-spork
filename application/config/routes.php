@@ -70,27 +70,27 @@ $route['api/getDocument'] = 'api/common/getDocuments';
 
 $route['api/getCustomer'] = 'api/customer/getCustomer';
 $route['api/setCustomer'] = 'api/customer/setCustomer';
-// $route['api/deleteCustomer'] = 'api/';
+$route['api/deleteCustomer'] = 'api/customer/deleteCustomer';
 $route['api/updateCustomer'] = 'api/customer/updateCustomer';
 
 $route['api/getRoom'] = 'api/room/getRoom';
 $route['api/setRoom'] = 'api/room/setRoom';
-// $route['api/deleteRoom'] = 'api/';
+$route['api/deleteRoom'] = 'api/room/deleteRoom';
 $route['api/updateRoom'] = 'api/room/updateRoom';
 
 $route['api/getUser'] = 'api/user/getUser';
 $route['api/setUser'] = 'api/user/setUser';
-// $route['api/deleteUser'] = 'api/';
+$route['api/deleteUser'] = 'api/user/deleteUser';
 $route['api/updateUser'] = 'api/user/updateUser';
 
 $route['api/getHotel'] = 'api/hotel/getHotel';
 $route['api/setHotel'] = 'api/hotel/setHotel';
-// $route['api/deleteHotel'] = 'api/';
+$route['api/deleteHotel'] = 'api/hotel/deleteHotel';
 $route['api/updateHotel'] = 'api/hotel/updateHotel';
 
 $route['api/getLocation'] = 'api/location/getLocation';
 $route['api/setLocation'] = 'api/location/setLocation';
-// $route['api/deleteLocation'] = 'api/';
+$route['api/deleteLocation'] = 'api/location/deleteLocation';
 $route['api/updateLocation'] = 'api/location/updateLocation';
 
 

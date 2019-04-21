@@ -81,6 +81,19 @@ class Hotel extends Secure_area
 			
 		}
 	}
+
+	public function deleteHotel()
+	{
+		if ($this->input->post('hotel_id') == "") {
+			$this->output->set_status_header('422');
+			echo_validation_errors();
+			exit;
+		}
+		$hotel_id = $this->input->post('hotel_id');
+
+		$responce_delete_Hotel = $this->Hotel_model->delete_Hotel($hotel_id);
+		echo give_responce_boolean($responce_delete_Hotel);
+	}
 }
 
 

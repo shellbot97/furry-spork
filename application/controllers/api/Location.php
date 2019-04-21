@@ -79,6 +79,18 @@ class Location extends Secure_area
 			
 		}
 	}
+
+	public function deleteLocation()
+	{
+		if ($this->input->post('location_id') == "") {
+			$this->output->set_status_header('422');
+			echo_validation_errors();
+			exit;
+		}
+		$location_id = $this->input->post('location_id');
+		$responce_delete_Location = $this->Location_model->delete_Location($location_id);
+		echo give_responce_boolean($responce_delete_Location);
+	}
 }
 
 

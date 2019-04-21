@@ -91,6 +91,19 @@ class User extends Secure_area
 			echo give_responce_boolean($responce_update_user);
 		}
 	}
+
+	public function deleteUser()
+	{
+		if ($this->input->post('user_id') == "") {
+			$this->output->set_status_header('422');
+			echo_validation_errors();
+			exit;
+		}
+		$user_id = $this->input->post('user_id');
+
+		$responce_delete_user = $this->User_model->delete_user( $user_id);
+		echo give_responce_boolean($responce_delete_user);
+	}
 }
 
 

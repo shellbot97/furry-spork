@@ -85,6 +85,19 @@ class Customer extends Secure_area
 			
 		}
 	}
+
+	public function deleteCustomer()
+	{
+		if ($this->input->post('customer_id') == "") {
+				$this->output->set_status_header('422');
+				echo_validation_errors();
+				exit;
+		}
+		$customerId = $this->input->post('customer_id');
+
+		$responce_delete_customer = $this->Customer_model->delete_customer($customerId);
+		echo give_responce_boolean($responce_delete_customer);
+	}
 }
 
 
