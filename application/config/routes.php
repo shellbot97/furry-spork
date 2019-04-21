@@ -94,6 +94,10 @@ $route['api/getLocation'] = 'api/location/getLocation';
 // $route['api/updateLocation'] = 'api/';
 
 
+/* FRONT-END */
+$route['admin/login'] = 'login';
+
+
 
 
 
