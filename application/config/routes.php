@@ -99,6 +99,16 @@ $route['admin/login'] = 'login';
 
 $route['admin/home'] = 'booking';
 
+$route['admin/customers'] = 'customer';
+
+$route['admin/room'] = 'room';
+
+$route['admin/user'] = 'user';
+
+$route['admin/hotel'] = 'hotel';
+
+$route['admin/location'] = 'location';
+
 
 
 

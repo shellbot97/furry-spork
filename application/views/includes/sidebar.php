@@ -14,12 +14,13 @@
     </div>
 
     <ul class="list-unstyled components">
-        <a href="#"><p>Bookings</p></a>
+        <a href="home"><p>Bookings</p></a>
         <li class="active">
             <a href="#locationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
             <ul class="collapse list-unstyled" id="locationSubmenu">
                 <li>
                     <a href="#">Add Location</a>
+                    <a href="location">View Locations</a>
                 </li>
             </ul>
         </li>
@@ -28,6 +29,7 @@
             <ul class="collapse list-unstyled" id="hotelSubmenu">
                 <li>
                     <a href="#">Add Hotel</a>
+                    <a href="hotel">View Hotels</a>
                 </li>
             </ul>
         </li>
@@ -36,6 +38,7 @@
             <ul class="collapse list-unstyled" id="userSubmenu">
                 <li>
                     <a href="#">Add User</a>
+                    <a href="user">View Users</a>
                 </li>
             </ul>
         </li>
@@ -44,6 +47,7 @@
             <ul class="collapse list-unstyled" id="roomSubmenu">
                 <li>
                     <a href="#">Add Room</a>
+                    <a href="room">View Rooms</a>
                 </li>
             </ul>
         </li>
@@ -52,6 +56,7 @@
             <ul class="collapse list-unstyled" id="customerSubmenu">
                 <li>
                     <a href="#">Add Customer</a>
+                    <a href="customers">View Customers</a>
                 </li>
             </ul>
         </li>
@@ -77,7 +82,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav navbar-nav ml-auto">
+                <!-- <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Page</a>
                     </li>
@@ -90,7 +95,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Page</a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
