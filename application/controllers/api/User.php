@@ -15,7 +15,7 @@ class User extends Secure_area
 
 	public function getUser()
 	{
-		$this->form_validation->set_rules('hotel_id', 'Hotel', 'required');
+		$this->form_validation->set_rules('hotel_id', 'Hotel', 'numeric');
 		if ($this->form_validation->run() == FALSE){
 			echo echo_validation_errors(validation_errors());
 		}else{

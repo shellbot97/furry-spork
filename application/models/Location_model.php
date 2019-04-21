@@ -22,7 +22,9 @@
 			if ($offset != '') {
 				$this->db->limit(global_limit, $offset);
 			}
-			$this->db->where('city_id', $city_id);
+			if ($city_id != "") {
+				$this->db->where('city_id', $city_id);
+			}
 			$this->db->where('user_id', $this->user_id);
 			$data = $this->db->get()->result_array();
 			return $data;

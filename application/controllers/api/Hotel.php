@@ -15,7 +15,7 @@ class Hotel extends Secure_area
 
 	public function getHotel()
 	{
-		$this->form_validation->set_rules('location_id', 'Location', 'required');
+		$this->form_validation->set_rules('location_id', 'Location', 'numeric');
 		if ($this->form_validation->run() == FALSE){
 			echo echo_validation_errors(validation_errors());
 		}else{

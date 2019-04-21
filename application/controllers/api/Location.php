@@ -15,7 +15,7 @@ class Location extends Secure_area
 
 	public function getLocation()
 	{
-		$this->form_validation->set_rules('city_id', 'city', 'required');
+		$this->form_validation->set_rules('city_id', 'city', 'numeric');
 		if ($this->form_validation->run() == FALSE){
 			echo echo_validation_errors(validation_errors());
 		}else{
