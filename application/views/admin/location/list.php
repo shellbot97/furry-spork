@@ -31,7 +31,7 @@
 	                if(len > 0){
 	                    for(var i=0;i<len;i++){
 	                            txt += (typeof(obj.data[i].location_name) != "undefined") ? "<tr><td>"+obj.data[i].location_name+"</td>" : "<tr><td>-</td>";
-	                            txt += (typeof(obj.data[i].city_id) != "undefined") ? "<td>"+obj.data[i].city_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].city_name) != "undefined") ? "<td>"+obj.data[i].city_name+"</td>" : "<td>-</td>";
 	                            
 	                    }
 	                    if(txt != ""){

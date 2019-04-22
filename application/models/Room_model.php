@@ -10,24 +10,26 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
-			$this->table_name = 'rooms';
+			$this->table_name = 'rooms as r';
 		}
 
 		public function get_room_by_hotelid($id = '', $offset = '', $hotel_id = '')
 		{
-			$this->db->select('*');
+			$this->db->select('r.*, h.hotel_name, rt.room_type_name');
 			$this->db->from($this->table_name);
+			$this->db->join('hotels as h', 'h.hotel_id = r.hotel_id');
+			$this->db->join('room_type as rt', 'rt.room_type_id = r.room_type_id');
 			if ($id!="") {
-				$this->db->where('room_id', $id);
+				$this->db->where('r.room_id', $id);
 			}
 			if ($offset != '') {
 				$this->db->limit(global_limit, $offset);
 			}
 			if ($hotel_id != "") {
-				$this->db->where('hotel_id', $hotel_id);
+				$this->db->where('r.hotel_id', $hotel_id);
 			}
-			$this->db->where('user_id', $this->user_id);
-			$this->db->where('is_deleted', 0);
+			$this->db->where('r.user_id', $this->user_id);
+			$this->db->where('r.is_deleted', 0);
 			$data = $this->db->get()->result_array();
 			return $data;
 		}

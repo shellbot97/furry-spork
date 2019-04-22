@@ -10,24 +10,26 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
+			$this->table_name_alias = 'locations as l';
 			$this->table_name = 'locations';
 		}
 
 		public function get_location_by_cityid($id = '', $offset = '', $city_id = '')
 		{
-			$this->db->select('*');
-			$this->db->from($this->table_name);
+			$this->db->select('l.*, c.city_name');
+			$this->db->from($this->table_name_alias);
+			$this->db->join('cities as c', 'c.city_id = l.city_id');
 			if ($id!="") {
-				$this->db->where('location_id', $id);
+				$this->db->where('l.location_id', $id);
 			}
 			if ($offset != '') {
 				$this->db->limit(global_limit, $offset);
 			}
 			if ($city_id != "") {
-				$this->db->where('city_id', $city_id);
+				$this->db->where('l.city_id', $city_id);
 			}
-			$this->db->where('user_id', $this->user_id);
-			$this->db->where('is_deleted', 0);
+			$this->db->where('l.user_id', $this->user_id);
+			$this->db->where('l.is_deleted', 0);
 			$data = $this->db->get()->result_array();
 			return $data;
 		}

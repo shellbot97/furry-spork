@@ -31,7 +31,7 @@
 	                if(len > 0){
 	                    for(var i=0;i<len;i++){
 	                            txt += (typeof(obj.data[i].hotel_name) != "undefined") ? "<tr><td>"+obj.data[i].hotel_name+"</td>" : "<tr><td>-</td>";
-	                            txt += (typeof(obj.data[i].location_id) != "undefined") ? "<td>"+obj.data[i].location_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].location_name) != "undefined") ? "<td>"+obj.data[i].location_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].documents_required) != "undefined") ? "<td>"+obj.data[i].documents_required+"</td>" : "<td>-</td>";
 	                            
 	                    }

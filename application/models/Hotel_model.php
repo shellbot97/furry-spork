@@ -10,24 +10,25 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
-			$this->table_name = 'hotels';
+			$this->table_name = 'hotels as h';
 		}
 
 		public function get_hotel_by_locationid($id = '', $offset = '', $location_id = '')
 		{
-			$this->db->select('*');
+			$this->db->select('h.*, l.location_name');
 			$this->db->from($this->table_name);
+			$this->db->join('locations as l', 'l.location_id = h.location_id');
 			if ($id != "") {
-				$this->db->where('hotel_id', $id);
+				$this->db->where('h.hotel_id', $id);
 			}
 			if ($offset != '') {
 				$this->db->limit(global_limit, $offset);
 			}
 			if ($location_id != "") {
-				$this->db->where('location_id', $location_id);
+				$this->db->where('h.location_id', $location_id);
 			}
-			$this->db->where('user_id', $this->user_id);
-			$this->db->where('is_deleted', 0);
+			$this->db->where('h.user_id', $this->user_id);
+			$this->db->where('h.is_deleted', 0);
 			$data = $this->db->get()->result_array();
 			return $data;
 		}

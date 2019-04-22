@@ -36,7 +36,7 @@
 	                            txt += (typeof(obj.data[i].username) != "undefined") ? "<tr><td>"+obj.data[i].username+"</td>" : "<tr><td>-</td>";
 	                            txt += (typeof(obj.data[i].first_name) != "undefined") ? "<td>"+obj.data[i].first_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].last_name) != "undefined") ? "<td>"+obj.data[i].last_name+"</td>" : "<td>-</td>";
-	                            txt += (typeof(obj.data[i].hotel_id) != "undefined") ? "<td>"+obj.data[i].hotel_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].hotel_name) != "undefined") ? "<td>"+obj.data[i].hotel_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].is_admin) != "undefined") ? "<td>"+obj.data[i].is_admin+"</td>" : "<td>-</td>";
 	                            
 	                    }
