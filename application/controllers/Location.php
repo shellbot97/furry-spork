@@ -15,6 +15,12 @@
 			$data['main_content'] = 'admin/location/list';
 			$this->load->view('includes/template', $data);
 		}
+
+		public function addLocation()
+		{
+			$data['main_content'] = 'admin/location/edit';
+			$this->load->view('includes/template', $data);
+		}
 	}
 
 

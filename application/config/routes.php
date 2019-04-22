@@ -108,6 +108,7 @@ $route['admin/user'] = 'user';
 $route['admin/hotel'] = 'hotel';
 
 $route['admin/location'] = 'location';
+$route['admin/location/add'] = 'location/addLocation';
 
 
 

@@ -19,7 +19,7 @@
             <a href="#locationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
             <ul class="collapse list-unstyled" id="locationSubmenu">
                 <li>
-                    <a href="#">Add Location</a>
+                    <a href="location/add">Add Location</a>
                     <a href="location">View Locations</a>
                 </li>
             </ul>
