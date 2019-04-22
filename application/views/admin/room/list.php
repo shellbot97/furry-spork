@@ -4,8 +4,10 @@
 
             <table id="custom_table">
 			  <tr>
-			    <th>Location Name</th>
-			    <th>City</th>
+			    <th>Room Number</th>
+			    <th>Room Type</th>
+			    <th>Floor</th>
+			    <th>Hotel</th>
 			  </tr>
 			  
 			</table>
@@ -17,7 +19,7 @@
 	$(document).ready(function(){
 		$.ajax({
 			type: 'POST',
-			url: baseUrl + "api/getLocation", 
+			url: baseUrl + "api/getRoom", 
 			data: { 
 			        // 'username': $('#username').val(), 
 			        // 'password': $('#password').val() 
@@ -30,8 +32,10 @@
 	                var txt = "";
 	                if(len > 0){
 	                    for(var i=0;i<len;i++){
-	                            txt += (typeof(obj.data[i].location_name) != "undefined") ? "<tr><td>"+obj.data[i].location_name+"</td>" : "<tr><td>-</td>";
-	                            txt += (typeof(obj.data[i].city_id) != "undefined") ? "<td>"+obj.data[i].city_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].room_number) != "undefined") ? "<tr><td>"+obj.data[i].room_number+"</td>" : "<tr><td>-</td>";
+	                            txt += (typeof(obj.data[i].room_type_id) != "undefined") ? "<td>"+obj.data[i].room_type_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].floor_number) != "undefined") ? "<td>"+obj.data[i].floor_number+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].hotel_id) != "undefined") ? "<td>"+obj.data[i].hotel_id+"</td>" : "<td>-</td>";
 	                            
 	                    }
 	                    if(txt != ""){

@@ -51,7 +51,7 @@
                 </li>
             </ul>
         </li>
-        <li class="active">
+<!--         <li class="active">
             <a href="#customerSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Customer</a>
             <ul class="collapse list-unstyled" id="customerSubmenu">
                 <li>
@@ -59,7 +59,7 @@
                     <a href="customers">View Customers</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
 
         <!--<li>
             <a href="#">Contact</a>

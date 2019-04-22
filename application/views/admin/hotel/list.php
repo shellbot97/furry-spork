@@ -4,8 +4,9 @@
 
             <table id="custom_table">
 			  <tr>
-			    <th>Location Name</th>
-			    <th>City</th>
+			    <th>Hotel Name</th>
+			    <th>Location</th>
+			    <th>Documents Required</th>
 			  </tr>
 			  
 			</table>
@@ -17,7 +18,7 @@
 	$(document).ready(function(){
 		$.ajax({
 			type: 'POST',
-			url: baseUrl + "api/getLocation", 
+			url: baseUrl + "api/getHotel", 
 			data: { 
 			        // 'username': $('#username').val(), 
 			        // 'password': $('#password').val() 
@@ -30,8 +31,9 @@
 	                var txt = "";
 	                if(len > 0){
 	                    for(var i=0;i<len;i++){
-	                            txt += (typeof(obj.data[i].location_name) != "undefined") ? "<tr><td>"+obj.data[i].location_name+"</td>" : "<tr><td>-</td>";
-	                            txt += (typeof(obj.data[i].city_id) != "undefined") ? "<td>"+obj.data[i].city_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].hotel_name) != "undefined") ? "<tr><td>"+obj.data[i].hotel_name+"</td>" : "<tr><td>-</td>";
+	                            txt += (typeof(obj.data[i].location_id) != "undefined") ? "<td>"+obj.data[i].location_id+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].documents_required) != "undefined") ? "<td>"+obj.data[i].documents_required+"</td>" : "<td>-</td>";
 	                            
 	                    }
 	                    if(txt != ""){
