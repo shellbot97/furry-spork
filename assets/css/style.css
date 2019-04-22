@@ -180,6 +180,12 @@ input[type=submit]:hover {
   background-color: #e54431;
 }
 
+.headline{
+  color: #f6b265;
+  padding: 10px;
+  margin-left: 10px; 
+}
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */

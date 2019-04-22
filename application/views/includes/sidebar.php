@@ -14,13 +14,13 @@
     </div>
 
     <ul class="list-unstyled components">
-        <a href="home"><p>Bookings</p></a>
+        <a href="<?php echo site_url('admin/home') ?>"><p>Bookings</p></a>
         <li class="active">
             <a href="#locationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
             <ul class="collapse list-unstyled" id="locationSubmenu">
                 <li>
-                    <a href="location/add">Add Location</a>
-                    <a href="location">View Locations</a>
+                    <a href="<?php echo site_url('admin/location/add') ?>">Add Location</a>
+                    <a href="<?php echo site_url('location') ?>">View Locations</a>
                 </li>
             </ul>
         </li>
@@ -29,7 +29,7 @@
             <ul class="collapse list-unstyled" id="hotelSubmenu">
                 <li>
                     <a href="#">Add Hotel</a>
-                    <a href="hotel">View Hotels</a>
+                    <a href="<?php echo site_url('hotel') ?>">View Hotels</a>
                 </li>
             </ul>
         </li>
@@ -38,7 +38,7 @@
             <ul class="collapse list-unstyled" id="userSubmenu">
                 <li>
                     <a href="#">Add User</a>
-                    <a href="user">View Users</a>
+                    <a href="<?php echo site_url('user') ?>">View Users</a>
                 </li>
             </ul>
         </li>
@@ -47,7 +47,7 @@
             <ul class="collapse list-unstyled" id="roomSubmenu">
                 <li>
                     <a href="#">Add Room</a>
-                    <a href="room">View Rooms</a>
+                    <a href="<?php echo site_url('room') ?>">View Rooms</a>
                 </li>
             </ul>
         </li>
@@ -77,6 +77,7 @@
                 <i class="fas fa-align-left"></i>
                 <span>Menu</span>
             </button>
+            <h3 class="headline">Sudamapuri Dharamshala</h3>
             <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-align-justify"></i>
             </button>
