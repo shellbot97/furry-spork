@@ -45,25 +45,25 @@
 			}
 		});
 	});
-$('body').on('click','.delete',function(){
-    var id = this.id;
-    $.ajax({
-			type: 'POST',
-			url: baseUrl + "api/deleteLocation", 
-			data: { 
-			        'location_id': id
-			},
-			headers: {"Authorization": localStorage.getItem("token")},
-			success: function(result){
-				var obj = jQuery.parseJSON( result );
-				if(obj.data){
+	$('body').on('click','.delete',function(){
+	    var id = this.id;
+	    $.ajax({
+				type: 'POST',
+				url: baseUrl + "api/deleteLocation", 
+				data: { 
+				        'location_id': id
+				},
+				headers: {"Authorization": localStorage.getItem("token")},
+				success: function(result){
 					var obj = jQuery.parseJSON( result );
-					alert(obj.status);
-					window.location.href = baseUrl+"admin/location";
-	            }
+					if(obj.data){
+						var obj = jQuery.parseJSON( result );
+						alert(obj.status);
+						window.location.href = baseUrl+"admin/location";
+		            }
 
-			}
+				}
 		});
-});
+	});
 
 </script>
