@@ -6,6 +6,7 @@
 			    <th>Hotel Name</th>
 			    <th>Location</th>
 			    <th>Documents Required</th>
+			    <th>Action</th>
 			  </tr>
 			  
 			</table>
@@ -33,6 +34,7 @@
 	                            txt += (typeof(obj.data[i].hotel_name) != "undefined") ? "<tr><td>"+obj.data[i].hotel_name+"</td>" : "<tr><td>-</td>";
 	                            txt += (typeof(obj.data[i].location_name) != "undefined") ? "<td>"+obj.data[i].location_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].documents_required) != "undefined") ? "<td>"+obj.data[i].documents_required+"</td>" : "<td>-</td>";
+	                            txt += (typeof(obj.data[i].hotel_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].hotel_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button> <button class = "update" id = "'+obj.data[i].hotel_id+'"><i class="fa fa-pencil" aria-hidden="true"></i> </button> </td>' : '<td>-</td>';
 	                            
 	                    }
 	                    if(txt != ""){
@@ -43,6 +45,48 @@
 
 			}
 		});
+	});
+	$('body').on('click','.delete',function(){
+	    var id = this.id;
+	    $.ajax({
+				type: 'POST',
+				url: baseUrl + "api/deleteHotel", 
+				data: { 
+				        'hotel_id': id
+				},
+				headers: {"Authorization": localStorage.getItem("token")},
+				success: function(result){
+					var obj = jQuery.parseJSON( result );
+					if(obj.data){
+						var obj = jQuery.parseJSON( result );
+						alert(obj.status);
+						window.location.href = baseUrl+"admin/hotel";
+		            }
+
+				}
+		});
+	});
+
+	$('body').on('click','.update',function(){
+	    var id = this.id;
+	    alert(id);
+	 //    $.ajax({
+		// 		type: 'POST',
+		// 		url: baseUrl + "api/updateHotel", 
+		// 		data: { 
+		// 		        'hotel_id': id
+		// 		},
+		// 		headers: {"Authorization": localStorage.getItem("token")},
+		// 		success: function(result){
+		// 			var obj = jQuery.parseJSON( result );
+		// 			if(obj.data){
+		// 				var obj = jQuery.parseJSON( result );
+		// 				alert(obj.status);
+		// 				window.location.href = baseUrl+"admin/hotel";
+		//             }
+
+		// 		}
+		// });
 	});
 
 </script>
