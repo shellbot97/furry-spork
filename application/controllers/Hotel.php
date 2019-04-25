@@ -17,6 +17,12 @@
 			$data['main_content'] = 'admin/hotel/list';
 			$this->load->view('includes/template', $data);
 		}
+
+		public function addHotel()
+		{
+			$data['main_content'] = 'admin/hotel/edit';
+			$this->load->view('includes/template', $data);
+		}
 	}
 
 

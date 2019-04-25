@@ -102,13 +102,19 @@ $route['admin/home'] = 'booking';
 $route['admin/customers'] = 'customer';
 
 $route['admin/room'] = 'room';
+$route['admin/room/add'] = 'room/addRoom';
 
 $route['admin/user'] = 'user';
+$route['admin/user/add'] = 'user/addUser';
 
 $route['admin/hotel'] = 'hotel';
+$route['admin/hotel/add'] = 'hotel/addHotel';
+
 
 $route['admin/location'] = 'location';
 $route['admin/location/add'] = 'location/addLocation';
+
+
 
 
 

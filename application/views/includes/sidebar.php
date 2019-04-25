@@ -28,7 +28,7 @@
             <a href="#hotelSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Hotels</a>
             <ul class="collapse list-unstyled" id="hotelSubmenu">
                 <li>
-                    <a href="#">Add Hotel</a>
+                    <a href="<?php echo site_url('admin/hotel/add') ?>">Add Hotel</a>
                     <a href="<?php echo site_url('hotel') ?>">View Hotels</a>
                 </li>
             </ul>
@@ -37,7 +37,7 @@
             <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Users</a>
             <ul class="collapse list-unstyled" id="userSubmenu">
                 <li>
-                    <a href="#">Add User</a>
+                    <a href="<?php echo site_url('admin/user/add') ?>">Add User</a>
                     <a href="<?php echo site_url('user') ?>">View Users</a>
                 </li>
             </ul>
@@ -46,7 +46,7 @@
             <a href="#roomSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Room</a>
             <ul class="collapse list-unstyled" id="roomSubmenu">
                 <li>
-                    <a href="#">Add Room</a>
+                    <a href="<?php echo site_url('admin/room/add') ?>">Add Room</a>
                     <a href="<?php echo site_url('room') ?>">View Rooms</a>
                 </li>
             </ul>

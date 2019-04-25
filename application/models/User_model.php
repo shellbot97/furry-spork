@@ -10,13 +10,14 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
-			$this->table_name = 'users as u';
+			$this->table_name_alias = 'users as u';
+			$this->table_name = 'users';
 		}
 
 		public function get_user_by_hotelid($id = '', $offset = '', $hotel_id = '')
 		{
 			$this->db->select('u.*, h.hotel_name');
-			$this->db->from($this->table_name);
+			$this->db->from($this->table_name_alias);
 			$this->db->join('hotels as h', 'h.hotel_id = u.hotel_id');
 			if ($id!="") {
 				$this->db->where('u.user_id', $id);

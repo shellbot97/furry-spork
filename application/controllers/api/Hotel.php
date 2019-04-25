@@ -33,22 +33,20 @@ class Hotel extends Secure_area
 	}
 
 	public function setHotel()
-	{
+	{	
 		$this->form_validation->set_rules('hotel_name', 'Username', 'trim|required');
 		$this->form_validation->set_rules('location_id', 'First Name', 'trim|numeric|required');
-		$this->form_validation->set_rules('documents_required', 'Documents Required', 'trim|required');
+		//$this->form_validation->set_rules('documents_required', 'Documents Required', 'trim|required');
 
 		if ($this->form_validation->run() == FALSE){
 			echo echo_validation_errors(validation_errors());
 		}else{
-
 			$hotelData = array(
 				'hotel_name' => ($this->input->post('hotel_name') != "") ? $this->input->post('hotel_name') : 'No Hotel Name',
 				'location_id' => ($this->input->post('location_id') != "") ? $this->input->post('location_id') : '-1',
-				'documents_required' => ($this->input->post('documents_required') != "") ? $this->input->post('documents_required') : '',
+				'documents_required' => ($this->input->post('documents_required') != "") ? json_encode($this->input->post('documents_required')) : '',
 				'user_id' => $this->user_id
 			);
-
 			$responce_set_Hotel = $this->Hotel_model->set_Hotel($hotelData);
 			echo give_responce_boolean($responce_set_Hotel);
 			

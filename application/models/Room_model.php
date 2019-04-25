@@ -10,13 +10,14 @@
 		{
 			parent::__construct();
 			$this->user_id = $this->session->userdata('user_id');
-			$this->table_name = 'rooms as r';
+			$this->table_name = 'rooms';
+			$this->table_name_alias = 'rooms as r';
 		}
 
 		public function get_room_by_hotelid($id = '', $offset = '', $hotel_id = '')
 		{
 			$this->db->select('r.*, h.hotel_name, rt.room_type_name');
-			$this->db->from($this->table_name);
+			$this->db->from($this->table_name_alias);
 			$this->db->join('hotels as h', 'h.hotel_id = r.hotel_id');
 			$this->db->join('room_type as rt', 'rt.room_type_id = r.room_type_id');
 			if ($id!="") {

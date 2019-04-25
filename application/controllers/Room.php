@@ -17,6 +17,12 @@
 			$data['main_content'] = 'admin/room/list';
 			$this->load->view('includes/template', $data);
 		}
+
+		public function addRoom()
+		{
+			$data['main_content'] = 'admin/room/edit';
+			$this->load->view('includes/template', $data);
+		}
 	}
 
 
