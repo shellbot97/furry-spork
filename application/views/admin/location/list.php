@@ -33,7 +33,7 @@
 	                    for(var i=0;i<len;i++){
 	                            txt += (typeof(obj.data[i].location_name) != "undefined") ? "<tr><td>"+obj.data[i].location_name+"</td>" : "<tr><td>-</td>";
 	                            txt += (typeof(obj.data[i].city_name) != "undefined") ? "<td>"+obj.data[i].city_name+"</td>" : "<td>-</td>";
-	                            txt += (typeof(obj.data[i].location_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].location_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button></td>' : '<td>-</td>';
+	                            txt += (typeof(obj.data[i].location_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].location_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button> <button class = "update" id = "'+obj.data[i].location_id+'"><i class="fa fa-pencil" aria-hidden="true"></i> </button> </td>' : '<td>-</td>';
 	                            
 	                    }
 	                    if(txt != ""){
@@ -64,6 +64,11 @@
 
 				}
 		});
+	});
+	$('body').on('click','.update',function(){
+	    var id = this.id;
+	    window.location.href = baseUrl+"admin/location/update/"+id;
+	    
 	});
 
 </script>

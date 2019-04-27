@@ -21,6 +21,13 @@
 			$data['main_content'] = 'admin/location/edit';
 			$this->load->view('includes/template', $data);
 		}
+		public function updateLocation($location_id='')
+		{
+			$data['main_content'] = 'admin/location/edit';
+			$data['location_id'] = $location_id;
+			$this->load->view('includes/template', $data);
+		}
+		
 	}
 
 

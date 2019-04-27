@@ -113,6 +113,7 @@ $route['admin/hotel/add'] = 'hotel/addHotel';
 
 $route['admin/location'] = 'location';
 $route['admin/location/add'] = 'location/addLocation';
+$route['admin/location/update/(:any)'] = 'location/updateLocation/$1';
 
 
 
