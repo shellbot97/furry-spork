@@ -1,5 +1,5 @@
 <div class="line"></div>
-	<h2>Add Location</h2>
+	<h2>Add/Edit Location</h2>
 	<div>
 		<!-- <form> -->
 			<input type="hidden" id="location_id" name="location_id" value='<?php if(isset($location_id)){ echo $location_id; }else{ echo ""; } ?>' readonly>

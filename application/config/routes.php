@@ -103,6 +103,7 @@ $route['admin/customers'] = 'customer';
 
 $route['admin/room'] = 'room';
 $route['admin/room/add'] = 'room/addRoom';
+$route['admin/room/update/(:any)'] = 'room/updateRoom/$1';
 
 $route['admin/user'] = 'user';
 $route['admin/user/add'] = 'user/addUser';

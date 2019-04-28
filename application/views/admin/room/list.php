@@ -37,7 +37,7 @@
 	                            txt += (typeof(obj.data[i].room_type_name) != "undefined") ? "<td>"+obj.data[i].room_type_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].floor_number) != "undefined") ? "<td>"+obj.data[i].floor_number+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].hotel_name) != "undefined") ? "<td>"+obj.data[i].hotel_name+"</td>" : "<td>-</td>";
-	                            txt += (typeof(obj.data[i].room_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].room_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button></td>' : '<td>-</td>';
+	                            txt += (typeof(obj.data[i].room_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].room_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button> <button class = "update" id = "'+obj.data[i].room_id+'"><i class="fa fa-pencil" aria-hidden="true"></i> </button> </td>' : '<td>-</td>';
 	                            
 	                    }
 	                    if(txt != ""){
@@ -68,6 +68,11 @@
 
 				}
 		});
+	});
+	$('body').on('click','.update',function(){
+	    var id = this.id;
+	    window.location.href = baseUrl+"admin/room/update/"+id;
+	    
 	});
 
 </script>

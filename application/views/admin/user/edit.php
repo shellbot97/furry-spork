@@ -1,5 +1,5 @@
 <div class="line"></div>
-	<h2>Add User</h2>
+	<h2>Add/Edit User</h2>
 	<div>
 		<!-- <form> -->
 			<input type="hidden" id="user_id" name="user_id" value='<?php if(isset($user_id)){ echo $user_id; }else{ echo ""; } ?>' readonly>

@@ -6,7 +6,7 @@
 <!-- -------------------------------------------- ------------------------------------------------------------------------------- -->
 
 <div class="line"></div>
-	<h2>Add Hotel</h2>
+	<h2>Add/Edit Hotel</h2>
 	<div>
 		<!-- <form> -->
 			<input type="hidden" id="hotel_id" name="hotel_id" value='<?php if(isset($hotel_id)){ echo $hotel_id; }else{ echo ""; } ?>' readonly>
