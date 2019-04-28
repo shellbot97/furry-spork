@@ -39,7 +39,7 @@
 	                            txt += (typeof(obj.data[i].last_name) != "undefined") ? "<td>"+obj.data[i].last_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].hotel_name) != "undefined") ? "<td>"+obj.data[i].hotel_name+"</td>" : "<td>-</td>";
 	                            txt += (typeof(obj.data[i].is_admin) != "undefined") ? "<td>"+obj.data[i].is_admin+"</td>" : "<td>-</td>";
-	                            txt += (typeof(obj.data[i].user_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].user_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button></td>' : '<td>-</td>';
+	                            txt += (typeof(obj.data[i].user_id) != "undefined") ? '<td> <button class = "delete" id = "'+obj.data[i].user_id+'"> <i class="fa fa-trash" aria-hidden="true"></i> </button> <button class = "update" id = "'+obj.data[i].user_id+'"><i class="fa fa-pencil" aria-hidden="true"></i> </button></td>' : '<td>-</td>';
 	                            
 	                    }
 	                    if(txt != ""){
@@ -70,5 +70,10 @@
 
 				}
 		});
+	});
+
+	$('body').on('click','.update',function(){
+	    var id = this.id;
+	    window.location.href = baseUrl+"admin/user/update/"+id;
 	});
 </script>

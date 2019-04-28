@@ -64,7 +64,7 @@ class User extends Secure_area
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
 		$this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		//$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_rules('hotel_id', 'Hotel', 'numeric|required');
 		$this->form_validation->set_rules('is_admin', 'Admin', 'trim|required|exact_length[1]');
 
@@ -81,9 +81,11 @@ class User extends Secure_area
 				'first_name' => ($this->input->post('first_name') != "") ? $this->input->post('first_name') : 'No Firstname',
 				'last_name' => ($this->input->post('last_name') != "") ? $this->input->post('last_name') : 'No Lastname',
 				'hotel_id' => ($this->input->post('hotel_id') != "") ? $this->input->post('hotel_id') : '-1',
-				'password' => ($this->input->post('password') != "") ? md5($this->input->post('password')) : 'No Password',
 				'is_admin' => ($this->input->post('is_admin') != "") ? $this->input->post('is_admin') : '0'
 			);
+			if ($this->input->post('password') != "") {
+				$UserData['password'] = md5($this->input->post('password'));
+			}
 
 			$user_id = $this->input->post('user_id');
 

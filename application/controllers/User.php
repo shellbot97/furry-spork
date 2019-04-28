@@ -22,6 +22,13 @@
 			$data['main_content'] = 'admin/user/edit';
 			$this->load->view('includes/template', $data);
 		}
+
+		public function updateUser($user_id='')
+		{
+			$data['main_content'] = 'admin/user/edit';
+			$data['user_id'] = $user_id;
+			$this->load->view('includes/template', $data);
+		}
 	}
 
 
