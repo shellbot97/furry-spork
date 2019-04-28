@@ -9,7 +9,7 @@
 	<h2>Add Hotel</h2>
 	<div>
 		<!-- <form> -->
-			<input type="hidden" id="hotel_id" name="hotel_id" value='<?php if($hotel_id){ echo $hotel_id; }else{ echo ""; } ?>' readonly>
+			<input type="hidden" id="hotel_id" name="hotel_id" value='<?php if(isset($hotel_id)){ echo $hotel_id; }else{ echo ""; } ?>' readonly>
 			<label for="hotel_name">Hotel Name - </label>
 			<input type="text" id="hotel_name" name="hotel_name" placeholder="Hotel name..">
 			<label for="location">Location - </label>

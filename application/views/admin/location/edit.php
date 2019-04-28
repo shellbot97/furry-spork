@@ -2,7 +2,7 @@
 	<h2>Add Location</h2>
 	<div>
 		<!-- <form> -->
-			<input type="hidden" id="location_id" name="location_id" value='<?php if($location_id){ echo $location_id; }else{ echo ""; } ?>' readonly>
+			<input type="hidden" id="location_id" name="location_id" value='<?php if(isset($location_id)){ echo $location_id; }else{ echo ""; } ?>' readonly>
 			<label for="location_name">Location Name</label>
 			<input type="text" id="location_name" name="location_name" placeholder="Location name..">
 			<label for="city">City</label>
