@@ -23,6 +23,13 @@
 			$data['main_content'] = 'admin/hotel/edit';
 			$this->load->view('includes/template', $data);
 		}
+
+		public function updateHotel($hotel_id='')
+		{
+			$data['main_content'] = 'admin/hotel/edit';
+			$data['hotel_id'] = $hotel_id;
+			$this->load->view('includes/template', $data);
+		}
 	}
 
 

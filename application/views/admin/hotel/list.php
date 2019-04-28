@@ -69,24 +69,7 @@
 
 	$('body').on('click','.update',function(){
 	    var id = this.id;
-	    alert(id);
-	 //    $.ajax({
-		// 		type: 'POST',
-		// 		url: baseUrl + "api/updateHotel", 
-		// 		data: { 
-		// 		        'hotel_id': id
-		// 		},
-		// 		headers: {"Authorization": localStorage.getItem("token")},
-		// 		success: function(result){
-		// 			var obj = jQuery.parseJSON( result );
-		// 			if(obj.data){
-		// 				var obj = jQuery.parseJSON( result );
-		// 				alert(obj.status);
-		// 				window.location.href = baseUrl+"admin/hotel";
-		//             }
-
-		// 		}
-		// });
+	 	window.location.href = baseUrl+"admin/hotel/update/"+id;
 	});
 
 </script>

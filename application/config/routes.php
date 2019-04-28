@@ -109,6 +109,7 @@ $route['admin/user/add'] = 'user/addUser';
 
 $route['admin/hotel'] = 'hotel';
 $route['admin/hotel/add'] = 'hotel/addHotel';
+$route['admin/hotel/update/(:any)'] = 'hotel/updateHotel/$1';
 
 
 $route['admin/location'] = 'location';
