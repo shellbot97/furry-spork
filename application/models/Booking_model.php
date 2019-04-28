@@ -15,10 +15,11 @@
 
 		public function get_booking_by_id($id='', $offset='')
 		{
-			$this->db->select('b.*, h.hotel_name, r.room_number');
+			$this->db->select('b.*, h.hotel_name, r.room_number, CONCAT(c.first_name, " ", c.last_name) as customer_name');
 			$this->db->from($this->table_name_alias);
 			$this->db->join('hotels as h', 'h.hotel_id = b.hotel_id');
 			$this->db->join('rooms as r', 'r.room_id = b.room_id');
+			$this->db->join('customers as c', 'c.customer_id = b.customer_id');
 			if ($id!="") {
 				$this->db->where('b.booking_id', $id);
 			}

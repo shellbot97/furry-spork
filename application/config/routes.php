@@ -100,6 +100,9 @@ $route['admin/login'] = 'login';
 $route['admin/home'] = 'booking';
 
 $route['book'] = 'booking/addBooking';
+$route['book/update/(:any)'] = 'booking/updateBooking/$1';
+$route['booking/print/(:any)'] = 'booking/printBooking/$1';
+
 
 $route['admin/customers'] = 'customer';
 

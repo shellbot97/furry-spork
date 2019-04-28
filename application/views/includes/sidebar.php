@@ -16,7 +16,7 @@
     <ul class="list-unstyled components">
         <a href="<?php echo site_url('book') ?>"><p>Book Hotel</p></a>
         <li class="active">
-            <a href="<?php echo site_url('admin/home') ?>" aria-expanded="false" class="dropdown-toggle">View Bookings</a>
+            <a href="<?php echo site_url('admin/home') ?>" aria-expanded="false">View Bookings</a>
         </li>
         <li class="active">
             <a href="#locationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
