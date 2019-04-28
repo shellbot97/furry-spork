@@ -38,12 +38,12 @@ CREATE TABLE `customers` ( `customer_id` INT(10) NOT NULL AUTO_INCREMENT ,
 	`address_2` VARCHAR(500) NOT NULL , `is_deleted` INT(1) NOT NULL DEFAULT '0' , 
 	PRIMARY KEY (`customer_id`)) ENGINE = InnoDB;
 ​
-CREATE TABLE `booking` ( `booking_id` INT(10) NOT NULL AUTO_INCREMENT , 
+CREATE TABLE `bookings` ( `bookings_id` INT(10) NOT NULL AUTO_INCREMENT , 
 	`customer_id` INT(10) NOT NULL , `hotel_id` INT(10) NOT NULL , `room_id` INT(10) NOT NULL , 
 	`invoice_number` VARCHAR(100) NOT NULL , `from_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , 
 	`to_date` DATETIME NOT NULL , `adult` INT(10) NOT NULL DEFAULT '1' , `children` INT(10) NOT NULL DEFAULT '0' , 
 	`created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `is_deleted` INT(1) NOT NULL DEFAULT '0' , 
-	PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+	PRIMARY KEY (`bookings_id`)) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
         `id` varchar(128) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 ALTER TABLE `locations` ADD `user_id` INT(10) NOT NULL AFTER `is_deleted`;
 
-ALTER TABLE `booking` ADD `user_id` INT(10) NOT NULL AFTER `is_deleted`;
+-- ALTER TABLE `bookings` ADD `user_id` INT(10) NOT NULL AFTER `is_deleted`;
 
 ALTER TABLE `hotels` ADD `user_id` INT(10) NOT NULL AFTER `documents_required`;
 

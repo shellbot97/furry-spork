@@ -63,10 +63,10 @@ $route['api/getRoomType'] = 'api/common/getRoomType';
 
 $route['api/getDocument'] = 'api/common/getDocuments';
 
-// $route['api/getBooking'] = 'api/';
-// $route['api/setBooking'] = 'api/';
-// $route['api/deleteBooking'] = 'api/';
-// $route['api/updateBooking'] = 'api/';
+$route['api/getBooking'] = 'api/booking/getBooking';
+$route['api/setBooking'] = 'api/booking/setBooking';
+$route['api/deleteBooking'] = 'api/booking/deleteBooking';
+$route['api/updateBooking'] = 'api/booking/updateBooking';
 
 $route['api/getCustomer'] = 'api/customer/getCustomer';
 $route['api/setCustomer'] = 'api/customer/setCustomer';
@@ -98,6 +98,8 @@ $route['api/updateLocation'] = 'api/location/updateLocation';
 $route['admin/login'] = 'login';
 
 $route['admin/home'] = 'booking';
+
+$route['book'] = 'booking/addBooking';
 
 $route['admin/customers'] = 'customer';
 

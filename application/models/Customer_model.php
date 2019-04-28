@@ -29,7 +29,7 @@
 		public function set_customer($value='')
 		{
 			$this->db->insert($this->table_name, $value);
-			return ($this->db->affected_rows() > 0) ? true : false;
+			return ($this->db->affected_rows() > 0) ?  $this->db->insert_id() : false;
 		}
 
 		public function update_customer($customer_data='', $customer_id='')

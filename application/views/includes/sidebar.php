@@ -14,7 +14,10 @@
     </div>
 
     <ul class="list-unstyled components">
-        <a href="<?php echo site_url('admin/home') ?>"><p>Bookings</p></a>
+        <a href="<?php echo site_url('book') ?>"><p>Book Hotel</p></a>
+        <li class="active">
+            <a href="<?php echo site_url('admin/home') ?>" aria-expanded="false" class="dropdown-toggle">View Bookings</a>
+        </li>
         <li class="active">
             <a href="#locationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
             <ul class="collapse list-unstyled" id="locationSubmenu">
