@@ -32,6 +32,26 @@ class Room extends Secure_area
 		}
 	}
 
+	public function getRoomAvailable()
+	{		
+		$this->form_validation->set_rules('hotel_id', 'Hotel', 'numeric');
+		if ($this->form_validation->run() == FALSE){
+			echo echo_validation_errors(validation_errors());
+		}else{
+
+			$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : "";
+			$offset = isset($_REQUEST['offset']) ? $_REQUEST['offset'] : "";
+
+			$hotel_id = $this->input->post('hotel_id');
+			$from_date = $this->input->post('from_date');
+			$to_date = $this->input->post('to_date');
+
+			$data = $this->Room_model->get_room_by_available($id, $offset, $hotel_id, $from_date, $to_date);
+
+			echo echo_result_by_array($data);
+		}
+	}
+
 	public function setRoom()
 	{
 		$this->form_validation->set_rules('room_number', 'Room Number', 'trim|required');

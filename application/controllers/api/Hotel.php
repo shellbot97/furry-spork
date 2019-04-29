@@ -11,6 +11,7 @@ class Hotel extends Secure_area
 	{
 		parent::__construct();
 		$this->load->model('Hotel_model');
+		$this->load->model('Common_model');
 		$this->user_id = $this->session->userdata('user_id');
 	}
 
@@ -28,6 +29,19 @@ class Hotel extends Secure_area
 
 			$data = $this->Hotel_model->get_hotel_by_locationid($id, $offset, $location_id);
 
+			
+
+			foreach ($data as $document_key => $document_value) {
+				$doc_name = array();
+				$docs = json_decode($document_value['documents_required']);
+				if (!empty($docs)) {
+					foreach ($docs as $docs_key => $docs_value) {
+						$doc_name[] = $this->Common_model->get_document_by_id($docs_value)[0]['document_name'];
+					}
+					$data[$document_key]['documents_required'] = json_encode($doc_name);
+				}
+				
+			}
 			echo echo_result_by_array($data);
 		}
 	}

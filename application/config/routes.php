@@ -67,6 +67,8 @@ $route['api/getBooking'] = 'api/booking/getBooking';
 $route['api/setBooking'] = 'api/booking/setBooking';
 $route['api/deleteBooking'] = 'api/booking/deleteBooking';
 $route['api/updateBooking'] = 'api/booking/updateBooking';
+$route['api/getAvailRoom'] = 'api/room/getRoomAvailable';
+
 
 $route['api/getCustomer'] = 'api/customer/getCustomer';
 $route['api/setCustomer'] = 'api/customer/setCustomer';

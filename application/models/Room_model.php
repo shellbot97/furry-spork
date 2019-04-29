@@ -35,6 +35,37 @@
 			return $data;
 		}
 
+		public function get_room_by_available($id = '', $offset = '', $hotel_id = '', $from_date = '', $to_date = '')
+		{
+			$this->db->select('r.*, h.hotel_name, rt.room_type_name');
+			$this->db->from($this->table_name_alias);
+			$this->db->join('hotels as h', 'h.hotel_id = r.hotel_id');
+			$this->db->join('room_type as rt', 'rt.room_type_id = r.room_type_id');
+			$this->db->join('bookings as b', 'b.room_id = r.room_id');
+			if ($id!="") {
+				$this->db->where('r.room_id', $id);
+			}
+			if ($offset != '') {
+				$this->db->limit(global_limit, $offset);
+			}
+			if ($hotel_id != "") {
+				$this->db->where('r.hotel_id', $hotel_id);
+			}
+
+			$this->db->where('b.from_date !=', $from_date);
+			$this->db->where('b.to_date !=', $to_date);
+
+			$this->db->where('r.user_id', $this->user_id);
+			$this->db->where('r.is_deleted', 0);
+			$this->db->where('b.is_deleted', 0);
+
+			$this->db->group_by("room_id"); 
+
+			$data = $this->db->get()->result_array();
+
+			return $data;
+		}
+
 		public function set_room($value='')
 		{
 			$this->db->insert($this->table_name, $value);

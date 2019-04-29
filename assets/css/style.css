@@ -186,7 +186,7 @@ input[type=submit]:hover {
   margin-left: 10px; 
 }
 
-.delete, .update, .print {
+.delete, .update, .print, .refresh {
   background-color: #f6b265; /* Green */
   border: none;
   color: white;
@@ -200,7 +200,7 @@ input[type=submit]:hover {
   transition-duration: 0.4s;
 }
 
-.delete:hover, .update:hover {
+.delete:hover, .update:hover, .print:hover, .refresh:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 

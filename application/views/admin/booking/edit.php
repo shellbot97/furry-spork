@@ -25,17 +25,20 @@
 			<label for="children">Children</label>
 			<input type="text" id="children" name="children" placeholder="Children..">
 
-			<label for="hotel">Hotel Name</label>
-			<select id="hotel" name="hotel_id"></select>
-
-			<label for="room_number">Room Number</label>
-			<select id="room_number" name="room_id"></select>
-
 			<label for="from_date">From Date</label>
 			<input type="date" id="from_date" name="from_date" placeholder="From Date..">
 
 			<label for="to_date">To Date</label>
 			<input type="date" id="to_date" name="to_date" placeholder="To Date..">
+
+			<label for="hotel">Hotel Name</label>
+			<select id="hotel" name="hotel_id"></select>
+
+			<button class = "refresh" id = "refresh"><i class="fa fa-refresh" aria-hidden="true"></i> </button><br>
+
+			<label for="room_number">Room Number</label>
+			<select id="room_number" name="room_id"></select>
+
 
 			<input type="submit" id="submitBtn" value="Submit">
 		<!-- </form> -->
@@ -159,33 +162,37 @@
     		}); 
 		}
 	});
-	$('#hotel').on('change', function() {
-		$.ajax({
-			type: 'POST',
-			url: baseUrl + "api/getRoom", 
-			data: {  
-				'hotel_id' : $('#hotel').val()
-			},
-			headers: {"Authorization": localStorage.getItem("token")},
-			success: function(result){
-				var obj = jQuery.parseJSON( result );
-				if(obj.data){
-	                var len = obj.data.length;
-	                var txt = "";
-	                if(len > 0){
-	                    for(var i=0;i<len;i++){
-                				$('#room_number').find('option').remove().end();
-	                            txt += (typeof(obj.data[i].room_number) != "undefined") ? '<option value="'+obj.data[i].room_id+'">'+obj.data[i].room_number+'</option>' : '<option> </option>';
-	                            
-	                    }
-	                    if(txt != ""){
-	                        $("#room_number").append(txt).removeClass("hidden");
-	                    }
-	                }
-	            }
+	$('#refresh').on('click', function() {
+		if ($('#from_date').val() != "" && $('#to_date').val() != "") {
+			$.ajax({
+				type: 'POST',
+				url: baseUrl + "api/getAvailRoom", 
+				data: {  
+					'hotel_id' : $('#hotel').val(),
+					'from_date' : $('#from_date').val(),
+					'to_date' : $('#to_date').val(),
+				},
+				headers: {"Authorization": localStorage.getItem("token")},
+				success: function(result){
+					var obj = jQuery.parseJSON( result );
+					if(obj.data){
+		                var len = obj.data.length;
+		                var txt = "";
+		                if(len > 0){
+		                    for(var i=0;i<len;i++){
+	                				$('#room_number').find('option').remove().end();
+		                            txt += (typeof(obj.data[i].room_number) != "undefined") ? '<option value="'+obj.data[i].room_id+'">'+obj.data[i].room_number+'</option>' : '<option> </option>';
+		                            
+		                    }
+		                    if(txt != ""){
+		                        $("#room_number").append(txt).removeClass("hidden");
+		                    }
+		                }
+		            }
 
-			}
-		});
+				}
+			});
+		}
 	});
 
 </script>
