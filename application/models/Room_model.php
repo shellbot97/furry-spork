@@ -42,6 +42,9 @@
 			$this->db->join('hotels as h', 'h.hotel_id = r.hotel_id');
 			$this->db->join('room_type as rt', 'rt.room_type_id = r.room_type_id');
 			$this->db->join('bookings as b', 'b.room_id = r.room_id');
+
+			$this->db->where("from_date NOT BETWEEN '".$from_date."' AND '".$to_date."'",null,false);
+
 			if ($id!="") {
 				$this->db->where('r.room_id', $id);
 			}
@@ -52,15 +55,12 @@
 				$this->db->where('r.hotel_id', $hotel_id);
 			}
 
-			$this->db->where('b.from_date !=', $from_date);
-			$this->db->where('b.to_date !=', $to_date);
 
 			$this->db->where('r.user_id', $this->user_id);
 			$this->db->where('r.is_deleted', 0);
 			$this->db->where('b.is_deleted', 0);
 
 			$this->db->group_by("room_id"); 
-
 			$data = $this->db->get()->result_array();
 
 			return $data;

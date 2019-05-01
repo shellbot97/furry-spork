@@ -181,7 +181,7 @@
 		                if(len > 0){
 		                    for(var i=0;i<len;i++){
 	                				$('#room_number').find('option').remove().end();
-		                            txt += (typeof(obj.data[i].room_number) != "undefined") ? '<option value="'+obj.data[i].room_id+'">'+obj.data[i].room_number+'</option>' : '<option> </option>';
+		                            txt += (typeof(obj.data[i].room_number) != "undefined") ? '<option value="'+obj.data[i].room_id+'">'+obj.data[i].room_number+'</option>' : '<option>No Content Found</option>';
 		                            
 		                    }
 		                    if(txt != ""){
