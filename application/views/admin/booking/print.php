@@ -87,7 +87,7 @@
                     </tbody>
                 </table>
                 <button type="button" id="print" class="btn btn-success btn-lg btn-block">
-                    print   <span class="glyphicon glyphicon-chevron-right"></span>
+                    print   <span class="glyphicon glyphicon-print"></span>
                 </button></td>
             </div>
         </div>
