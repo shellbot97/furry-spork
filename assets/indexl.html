@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Material Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+
+<body>
+  <div class="body-wrapper">
+    <!-- partial:partials/_sidebar.html -->
+    <aside class="mdc-persistent-drawer mdc-persistent-drawer--open">
+      <nav class="mdc-persistent-drawer__drawer">
+        <div class="mdc-persistent-drawer__toolbar-spacer">
+          <a href="index.html" class="brand-logo">
+						<img src="images/logo.svg" alt="logo">
+					</a>
+        </div>
+        <div class="mdc-list-group">
+          <nav class="mdc-list mdc-drawer-menu">
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="index.html">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">desktop_mac</i>
+                Dashboard
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="pages/forms/basic-forms.html">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
+                Forms
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item" href="#" data-toggle="expansionPanel" target-panel="ui-sub-menu">
+              <a class="mdc-drawer-link" href="#">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">dashboard</i>
+                UI Features
+                <i class="mdc-drawer-arrow material-icons">arrow_drop_down</i>
+              </a>
+              <div class="mdc-expansion-panel" id="ui-sub-menu">
+                <nav class="mdc-list mdc-drawer-submenu">
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/ui-features/buttons.html">
+                      Buttons
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/ui-features/typography.html">
+                      Typography
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="pages/ui-features/tables.html">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
+                Tables
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="pages/charts/chartjs.html">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">pie_chart_outlined</i>
+                Charts
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item" href="#" data-toggle="expansionPanel" target-panel="sample-page-submenu">
+              <a class="mdc-drawer-link" href="#">
+                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">pages</i>
+                Sample Pages
+                <i class="mdc-drawer-arrow material-icons">arrow_drop_down</i>
+              </a>
+              <div class="mdc-expansion-panel" id="sample-page-submenu">
+                <nav class="mdc-list mdc-drawer-submenu">
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/blank-page.html">
+                      Blank Page
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/403.html">
+                      403
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/404.html">
+                      404
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/500.html">
+                      500
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/505.html">
+                      505
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/login.html">
+                      Login
+                    </a>
+                  </div>
+                  <div class="mdc-list-item mdc-drawer-item">
+                    <a class="mdc-drawer-link" href="pages/samples/register.html">
+                      Register
+                    </a>
+                  </div>
+
+                </nav>
+              </div>
+            </div>
+            
+          </nav>
+        </div>
+      </nav>
+    </aside>
+    <!-- partial -->
+    <!-- partial:partials/_navbar.html -->
+    <header class="mdc-toolbar mdc-elevation--z4 mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <a href="#" class="menu-toggler material-icons mdc-toolbar__menu-icon">menu</a>
+          <span class="mdc-toolbar__input">
+            <div class="mdc-text-field">
+              <input type="text" class="mdc-text-field__input" id="css-only-text-field-box" placeholder="Search anything...">
+            </div>
+          </span>
+        </section>
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+          <!-- <div class="mdc-menu-anchor">
+            <a href="#" class="mdc-toolbar__icon toggle mdc-ripple-surface" data-toggle="dropdown" toggle-dropdown="notification-menu" data-mdc-auto-init="MDCRipple">
+              <i class="material-icons">notifications</i>
+              <span class="dropdown-count">3</span>
+            </a>
+            <div class="mdc-simple-menu mdc-simple-menu--right" tabindex="-1" id="notification-menu">
+              <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+                <li class="mdc-list-item" role="menuitem" tabindex="0">
+                  <i class="material-icons mdc-theme--primary mr-1">email</i>
+                  One unread message
+                </li>
+                <li class="mdc-list-item" role="menuitem" tabindex="0">
+                  <i class="material-icons mdc-theme--primary mr-1">group</i>
+                  One event coming up
+                </li>
+                <li class="mdc-list-item" role="menuitem" tabindex="0">
+                  <i class="material-icons mdc-theme--primary mr-1">cake</i>
+                  It's Aleena's birthday!
+                </li>
+              </ul>
+            </div>
+          </div> -->
+          
+          <div class="mdc-menu-anchor mr-1">
+            <a href="#" class="mdc-toolbar__icon toggle mdc-ripple-surface" data-toggle="dropdown" toggle-dropdown="logout-menu" data-mdc-auto-init="MDCRipple">
+              <i class="material-icons">more_vert</i>
+            </a>
+            <div class="mdc-simple-menu mdc-simple-menu--right" tabindex="-1" id="logout-menu">
+                <ul class="mdc-simple-menu__items mdc-list" role="menu" aria-hidden="true">
+                 
+                  <li class="mdc-list-item" role="menuitem" tabindex="0">
+                    <i class="material-icons mdc-theme--primary mr-1">power_settings_new</i>
+                    Logout
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+    <!-- partial -->
+    <div class="page-wrapper mdc-toolbar-fixed-adjust">
+      <main class="content-wrapper">
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
+              <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+                  <div class="mdc-card py-3 pl-2 d-flex flex-row align-item-center">
+                    <div class="mdc--tile mdc--tile-danger rounded">
+                      <i class="mdi mdi-account-settings text-white icon-md"></i>
+                    </div>
+                    <div class="text-wrapper pl-1">
+                      <h3 class="mdc-typography--display1 font-weight-bold mb-1">7459</h3>
+                      <p class="font-weight-normal mb-0 mt-0">Rooms Booked</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+                  <div class="mdc-card py-3 pl-2 d-flex flex-row align-item-center">
+                    <div class="mdc--tile mdc--tile-success rounded">
+                      <i class="mdi mdi-basket text-white icon-md"></i>
+                    </div>
+                    <div class="text-wrapper pl-1">
+                      <h3 class="mdc-typography--display1 font-weight-bold mb-1">$7783</h3>
+                      <p class="font-weight-normal mb-0 mt-0">Rooms Remaining</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+                  <div class="mdc-card py-3 pl-2 d-flex flex-row align-item-center">
+                    <div class="mdc--tile mdc--tile-warning rounded">
+                      <i class="mdi mdi-ticket text-white icon-md"></i>
+                    </div>
+                    <div class="text-wrapper pl-1">
+                      <h3 class="mdc-typography--display1 font-weight-bold mb-1">569</h3>
+                      <p class="font-weight-normal mb-0 mt-0">Yatris Staying</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+                  <div class="mdc-card py-3 pl-2 d-flex flex-row align-item-center">
+                    <div class="mdc--tile mdc--tile-primary rounded">
+                      <i class="mdi mdi-account-star text-white icon-md"></i>
+                    </div>
+                    <div class="text-wrapper pl-1">
+                      <h3 class="mdc-typography--display1 font-weight-bold mb-1">5785</h3>
+                      <p class="font-weight-normal mb-0 mt-0">Yatris leaving</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
+              <div class="mdc-card d-flex flex-column">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+                  <div class="mdc-card">
+                    <section class="mdc-card__primary">
+                      <h1 class="mdc-card__title mdc-card__title--large">Revenue Generated</h1>
+                    </section>
+                    <section class="mdc-card__supporting-text">
+                      <canvas id="doughnutChart" style="height:250px"></canvas>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+              <div class="mdc-card px-2 py-2">
+                <div id="js-legend" class="chartjs-legend mb-3"></div>
+                <canvas id="dashboard-monthly-analytics" height="205"></canvas>
+              </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+              <div class="mdc-card table-responsive">
+                <div class="table-heading px-2 px-1 border-bottom">
+                  <h1 class="mdc-card__title mdc-card__title--large">Bookings</h1>
+                </div>
+                <table id="example1" class="display" width="100%"></table>
+              </div>
+            </div>
+
+
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+              <div class="mdc-card table-responsive">
+                <div class="table-heading px-2 px-1 border-bottom">
+                  <h1 class="mdc-card__title mdc-card__title--large">Receipts</h1>
+                </div>
+                <table id="example" class="display" width="100%"></table>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+      <!-- partial:partials/_footer.html -->
+      <footer>
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
+              <span class="text-muted">Copyright © 2018 <a class="text-green" href="https://www.bootstrapdash.com/" target="_blank">Bootstrap Dash</a>. All rights reserved.</span>
+            </div>
+            
+          </div>
+        </div>
+      </footer>
+      <!-- partial -->
+    </div>
+  </div>
+  <!-- body wrapper -->
+  <!-- plugins:js -->
+  <script src="node_modules/material-components-web/dist/material-components-web.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/progressbar.js/dist/progressbar.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/misc.js"></script>
+  <script src="js/material.js"></script>
+  <script src="js/chart.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+
+
+<script src="js/dataTables.min.js"></script>
+  <script type="text/javascript">
+    var dataSet = [
+    [ "Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800" , "print"],
+    [ "Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750" , "print"],
+    [ "Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000" , "print"],
+    [ "Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060" , "print"],
+    [ "Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700" , "print"],
+    [ "Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000" , "print"],
+    [ "Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500" , "print"],
+    [ "Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900" , "print"],
+    [ "Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500" , "print"],
+    [ "Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600" , "print"],
+    [ "Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560" , "print"],
+    [ "Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000" , "print"],
+    [ "Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600" , "print"],
+    [ "Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500" , "print"],
+    [ "Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750" , "print"],
+    [ "Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500" , "print"],
+    [ "Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000" , "print"],
+    [ "Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500" , "print"],
+    [ "Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000" , "print"],
+    [ "Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500" , "print"],
+    [ "Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000" , "print"],
+    [ "Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000" , "print"],
+    [ "Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450" , "print"],
+    [ "Doris Wilder", "Sales Assistant", "Sidney", "3023", "2010/09/20", "$85,600" , "print"],
+    [ "Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000" , "print"],
+    [ "Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575" , "print"],
+    [ "Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650" , "print"],
+    [ "Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850" , "print"],
+    [ "Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000" , "print"],
+    [ "Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000" , "print"],
+    [ "Michelle House", "Integration Specialist", "Sidney", "2769", "2011/06/02", "$95,400" , "print"],
+    [ "Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500" , "print"],
+    [ "Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000" , "print"],
+    [ "Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500" , "print"],
+    [ "Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050" , "print"],
+    [ "Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675" , "print"]
+];
+ 
+$(document).ready(function() {
+    $('#example').DataTable( {
+        data: dataSet,
+        columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" },
+            { title: "Action" }
+        ]
+    } );
+    $('#example1').DataTable( {
+        data: dataSet,
+        columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" }
+
+        ]
+    } );
+} );
+  </script>
+<link rel="stylesheet" type="text/css" href="scss/dataTables.min.css">
+</body>
+
+</html>

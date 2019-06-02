@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Login</title>
-  <link rel="icon" href= "<?php echo base_url(); ?>assets/img/logo_english.png"  type="image/x-icon" sizes="16 * 16">
+  <link rel="icon" href= "<?php echo base_url(); ?>assets/images/logo_english.svg"  type="image/x-icon" sizes="16 * 16">
   <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -119,13 +119,14 @@
         
       <div class="form">
         <div class="">
-            <img  height="100" src= "<?php echo base_url(); ?>assets/img/logo_english.png" class="brand-icon" style="
+            <img  height="100" src= "<?php echo base_url(); ?>assets/images/logo_english.svg" class="brand-icon" style="
     height: 131px;>
         </div>
         <form class="login-form">
           <input type="text" placeholder="username" id="username" />
           <input type="password" placeholder="password" id="password" />
           <button id="submit">login</button>
+          <a id="register" href="<?php echo site_url('admin/register') ?>" >Register</a>
           <p class="message" id="error_message" style="display: none;">Invalid Credentials</p>
         </form>
       </div>

@@ -15,6 +15,11 @@
 		{
 			$this->load->view('admin/login', "", FALSE);
 		}
+
+		public function register()
+		{
+			$this->load->view('admin/register', "", FALSE);
+		}
 	}
 
 

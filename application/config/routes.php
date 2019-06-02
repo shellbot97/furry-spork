@@ -49,85 +49,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'login';
+$route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-/* APIS */
-
-$route['api/login'] = 'api/login';
-
-$route['api/getCity'] = 'api/common/getCity';
-
-$route['api/getRoomType'] = 'api/common/getRoomType';
-
-$route['api/getDocument'] = 'api/common/getDocuments';
-
-$route['api/getBooking'] = 'api/booking/getBooking';
-$route['api/setBooking'] = 'api/booking/setBooking';
-$route['api/deleteBooking'] = 'api/booking/deleteBooking';
-$route['api/updateBooking'] = 'api/booking/updateBooking';
-$route['api/getAvailRoom'] = 'api/room/getRoomAvailable';
-
-
-$route['api/getCustomer'] = 'api/customer/getCustomer';
-$route['api/setCustomer'] = 'api/customer/setCustomer';
-$route['api/deleteCustomer'] = 'api/customer/deleteCustomer';
-$route['api/updateCustomer'] = 'api/customer/updateCustomer';
-
-$route['api/getRoom'] = 'api/room/getRoom';
-$route['api/setRoom'] = 'api/room/setRoom';
-$route['api/deleteRoom'] = 'api/room/deleteRoom';
-$route['api/updateRoom'] = 'api/room/updateRoom';
-
-$route['api/getUser'] = 'api/user/getUser';
-$route['api/setUser'] = 'api/user/setUser';
-$route['api/deleteUser'] = 'api/user/deleteUser';
-$route['api/updateUser'] = 'api/user/updateUser';
-
-$route['api/getHotel'] = 'api/hotel/getHotel';
-$route['api/setHotel'] = 'api/hotel/setHotel';
-$route['api/deleteHotel'] = 'api/hotel/deleteHotel';
-$route['api/updateHotel'] = 'api/hotel/updateHotel';
-
-$route['api/getLocation'] = 'api/location/getLocation';
-$route['api/setLocation'] = 'api/location/setLocation';
-$route['api/deleteLocation'] = 'api/location/deleteLocation';
-$route['api/updateLocation'] = 'api/location/updateLocation';
-
-
-/* FRONT-END */
 $route['admin/login'] = 'login';
+$route['admin/register'] = 'login/register';
 
-$route['admin/home'] = 'booking';
+$route['admin/masters'] = 'masters';
 
-$route['book'] = 'booking/addBooking';
-$route['book/update/(:any)'] = 'booking/updateBooking/$1';
-$route['booking/print/(:any)'] = 'booking/printBooking/$1';
-
-
-$route['admin/customers'] = 'customer';
-
-$route['admin/room'] = 'room';
-$route['admin/room/add'] = 'room/addRoom';
-$route['admin/room/update/(:any)'] = 'room/updateRoom/$1';
-
-$route['admin/user'] = 'user';
-$route['admin/user/add'] = 'user/addUser';
-$route['admin/user/update/(:any)'] = 'user/updateUser/$1';
-
-$route['admin/hotel'] = 'hotel';
-$route['admin/hotel/add'] = 'hotel/addHotel';
-$route['admin/hotel/update/(:any)'] = 'hotel/updateHotel/$1';
-
-
-$route['admin/location'] = 'location';
-$route['admin/location/add'] = 'location/addLocation';
-$route['admin/location/update/(:any)'] = 'location/updateLocation/$1';
-
-
-
-
+$route['admin/add/room'] = 'room/addRoom';
 
 
 
