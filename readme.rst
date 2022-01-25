@@ -1,8 +1,8 @@
 ###################
-Hotel Management System
+What is furry-spork
 ###################
 
-HMS is an hotel management system application wherein you can add, update & delete rooms types, wings, hotels as per your need.
+furry-spork is an hotel management system application wherein you can add, update & delete rooms types, wings, hotels as per your need.
 Also theres a feature of creating different types of receipts and print them.
 
 *******************
